@@ -1,0 +1,357 @@
+{"language_name":"C"}
+{"language_name":"C++"}
+{"language_name":"Python"}
+{"language_name":"C#"}
+{"language_name":"CSS"}
+{"language_name":"HTML"}
+{"language_name":"Java"}
+{"language_name":"JavaScript"}
+{"language_name":"Objective-C"}
+{"language_name":"ApacheConf"}
+{"language_name":"PHP"}
+{"language_name":"Makefile"}
+{"language_name":"Ruby"}
+{"language_name":"Swift"}
+{"language_name":"Clojure"}
+{"language_name":"Shell"}
+{"language_name":"CMake"}
+{"language_name":"Elixir"}
+{"language_name":"Elm"}
+{"language_name":"Jupyter Notebook"}
+{"language_name":"Erlang"}
+{"language_name":"Perl"}
+{"language_name":"D"}
+{"language_name":"Lua"}
+{"language_name":"Pascal"}
+{"language_name":"Haskell"}
+{"language_name":"Handlebars"}
+{"language_name":"PLpgSQL"}
+{"language_name":"SQLPL"}
+{"language_name":"CoffeeScript"}
+{"language_name":"Vue"}
+{"language_name":"ASP"}
+{"language_name":"Assembly"}
+{"language_name":"Awk"}
+{"language_name":"Objective-C++"}
+{"language_name":"R"}
+{"language_name":"Scala"}
+{"language_name":"Scilab"}
+{"language_name":"TeX"}
+{"language_name":"UnrealScript"}
+{"language_name":"VimL"}
+{"language_name":"XSLT"}
+{"language_name":"Go"}
+{"language_name":"Batchfile"}
+{"language_name":"Protocol Buffer"}
+{"language_name":"AutoHotkey"}
+{"language_name":"TypeScript"}
+{"language_name":"Rust"}
+{"language_name":"Vim script"}
+{"language_name":"ActionScript"}
+{"language_name":"Puppet"}
+{"language_name":"Prolog"}
+{"language_name":"Scheme"}
+{"language_name":"Smalltalk"}
+{"language_name":"GLSL"}
+{"language_name":"Roff"}
+{"language_name":"Visual Basic"}
+{"language_name":"Inno Setup"}
+{"language_name":"LiveScript"}
+{"language_name":"Racket"}
+{"language_name":"HLSL"}
+{"language_name":"ShaderLab"}
+{"language_name":"Arduino"}
+{"language_name":"Matlab"}
+{"language_name":"BitBake"}
+{"language_name":"Limbo"}
+{"language_name":"M"}
+{"language_name":"DIGITAL Command Language"}
+{"language_name":"Groff"}
+{"language_name":"Emacs Lisp"}
+{"language_name":"Groovy"}
+{"language_name":"Web Ontology Language"}
+{"language_name":"Cuda"}
+{"language_name":"Smarty"}
+{"language_name":"Max"}
+{"language_name":"Processing"}
+{"language_name":"Pure Data"}
+{"language_name":"Rebol"}
+{"language_name":"SuperCollider"}
+{"language_name":"AMPL"}
+{"language_name":"OCaml"}
+{"language_name":"Standard ML"}
+{"language_name":"Fortran"}
+{"language_name":"PowerShell"}
+{"language_name":"Lex"}
+{"language_name":"SourcePawn"}
+{"language_name":"Yacc"}
+{"language_name":"Bison"}
+{"language_name":"Forth"}
+{"language_name":"Modelica"}
+{"language_name":"Perl6"}
+{"language_name":"Tcl"}
+{"language_name":"AGS Script"}
+{"language_name":"Gnuplot"}
+{"language_name":"QML"}
+{"language_name":"M4"}
+{"language_name":"Kotlin"}
+{"language_name":"Thrift"}
+{"language_name":"ANTLR"}
+{"language_name":"FreeMarker"}
+{"language_name":"Brainfuck"}
+{"language_name":"Common Lisp"}
+{"language_name":"Coq"}
+{"language_name":"E"}
+{"language_name":"GAP"}
+{"language_name":"Jasmin"}
+{"language_name":"Logos"}
+{"language_name":"OpenEdge ABL"}
+{"language_name":"Red"}
+{"language_name":"Verilog"}
+{"language_name":"BlitzBasic"}
+{"language_name":"MQL5"}
+{"language_name":"NSIS"}
+{"language_name":"Gherkin"}
+{"language_name":"ColdFusion"}
+{"language_name":"QMake"}
+{"language_name":"Eagle"}
+{"language_name":"LSL"}
+{"language_name":"DOT"}
+{"language_name":"Julia"}
+{"language_name":"LLVM"}
+{"language_name":"PostScript"}
+{"language_name":"Nginx"}
+{"language_name":"SMT"}
+{"language_name":"Nix"}
+{"language_name":"Apex"}
+{"language_name":"FORTRAN"}
+{"language_name":"IDL"}
+{"language_name":"RenderScript"}
+{"language_name":"KiCad"}
+{"language_name":"XS"}
+{"language_name":"Haxe"}
+{"language_name":"PLSQL"}
+{"language_name":"Cucumber"}
+{"language_name":"DTrace"}
+{"language_name":"Meson"}
+{"language_name":"AppleScript"}
+{"language_name":"Arc"}
+{"language_name":"AspectJ"}
+{"language_name":"HCL"}
+{"language_name":"Pony"}
+{"language_name":"PAWN"}
+{"language_name":"Crystal"}
+{"language_name":"Gettext Catalog"}
+{"language_name":"F#"}
+{"language_name":"Mako"}
+{"language_name":"eC"}
+{"language_name":"xBase"}
+{"language_name":"Kit"}
+{"language_name":"sed"}
+{"language_name":"XML"}
+{"language_name":"Dart"}
+{"language_name":"Liquid"}
+{"language_name":"FLUX"}
+{"language_name":"SRecode Template"}
+{"language_name":"AutoIt"}
+{"language_name":"Mathematica"}
+{"language_name":"Stan"}
+{"language_name":"GDB"}
+{"language_name":"Vala"}
+{"language_name":"Nimrod"}
+{"language_name":"SaltStack"}
+{"language_name":"Ragel in Ruby Host"}
+{"language_name":"VHDL"}
+{"language_name":"WebIDL"}
+{"language_name":"SQF"}
+{"language_name":"nesC"}
+{"language_name":"Component Pascal"}
+{"language_name":"GCC Machine Description"}
+{"language_name":"Hack"}
+{"language_name":"PigLatin"}
+{"language_name":"LabVIEW"}
+{"language_name":"PureScript"}
+{"language_name":"Mercury"}
+{"language_name":"Objective-J"}
+{"language_name":"LilyPond"}
+{"language_name":"XQuery"}
+{"language_name":"Isabelle"}
+{"language_name":"NewLisp"}
+{"language_name":"Game Maker Language"}
+{"language_name":"OpenSCAD"}
+{"language_name":"Squirrel"}
+{"language_name":"Gosu"}
+{"language_name":"Uno"}
+{"language_name":"Stata"}
+{"language_name":"Cap'n Proto"}
+{"language_name":"Diff"}
+{"language_name":"API Blueprint"}
+{"language_name":"GDScript"}
+{"language_name":"Redcode"}
+{"language_name":"EmberScript"}
+{"language_name":"PureBasic"}
+{"language_name":"SystemVerilog"}
+{"language_name":"Ragel"}
+{"language_name":"Io"}
+{"language_name":"ChucK"}
+{"language_name":"Idris"}
+{"language_name":"Cool"}
+{"language_name":"Click"}
+{"language_name":"Pike"}
+{"language_name":"JSONiq"}
+{"language_name":"POV-Ray SDL"}
+{"language_name":"Xtend"}
+{"language_name":"Ada"}
+{"language_name":"Modula-2"}
+{"language_name":"Slash"}
+{"language_name":"q"}
+{"language_name":"Solidity"}
+{"language_name":"NetLogo"}
+{"language_name":"ABAP"}
+{"language_name":"COBOL"}
+{"language_name":"Cirru"}
+{"language_name":"Eiffel"}
+{"language_name":"Lean"}
+{"language_name":"Mask"}
+{"language_name":"Perl 6"}
+{"language_name":"P4"}
+{"language_name":"Nu"}
+{"language_name":"TLA"}
+{"language_name":"Delphi"}
+{"language_name":"APL"}
+{"language_name":"Lasso"}
+{"language_name":"XC"}
+{"language_name":"CLIPS"}
+{"language_name":"Clarion"}
+{"language_name":"Module Management System"}
+{"language_name":"SAS"}
+{"language_name":"MAXScript"}
+{"language_name":"VCL"}
+{"language_name":"Graphviz (DOT)"}
+{"language_name":"RAML"}
+{"language_name":"Monkey"}
+{"language_name":"RobotFramework"}
+{"language_name":"AngelScript"}
+{"language_name":"Bro"}
+{"language_name":"Augeas"}
+{"language_name":"Smali"}
+{"language_name":"Ceylon"}
+{"language_name":"MoonScript"}
+{"language_name":"DM"}
+{"language_name":"RPC"}
+{"language_name":"Fancy"}
+{"language_name":"Ecl"}
+{"language_name":"Papyrus"}
+{"language_name":"Csound Score"}
+{"language_name":"mupad"}
+{"language_name":"Agda"}
+{"language_name":"Turing"}
+{"language_name":"Parrot"}
+{"language_name":"Volt"}
+{"language_name":"SQL"}
+{"language_name":"Dylan"}
+{"language_name":"Nim"}
+{"language_name":"HyPhy"}
+{"language_name":"CartoCSS"}
+{"language_name":"Ren'Py"}
+{"language_name":"Self"}
+{"language_name":"JFlex"}
+{"language_name":"BlitzMax"}
+{"language_name":"Befunge"}
+{"language_name":"XProc"}
+{"language_name":"Nemerle"}
+{"language_name":"Metal"}
+{"language_name":"ooc"}
+{"language_name":"Zephir"}
+{"language_name":"Frege"}
+{"language_name":"Opa"}
+{"language_name":"Terra"}
+{"language_name":"EQ"}
+{"language_name":"1C Enterprise"}
+{"language_name":"Boo"}
+{"language_name":"Alloy"}
+{"language_name":"Cycript"}
+{"language_name":"LOLCODE"}
+{"language_name":"Genshi"}
+{"language_name":"Pan"}
+{"language_name":"Csound"}
+{"language_name":"Pep8"}
+{"language_name":"REXX"}
+{"language_name":"Grammatical Framework"}
+{"language_name":"Mirah"}
+{"language_name":"Common Workflow Language"}
+{"language_name":"wdl"}
+{"language_name":"Filebench WML"}
+{"language_name":"PicoLisp"}
+{"language_name":"Chapel"}
+{"language_name":"Rascal"}
+{"language_name":"Csound Document"}
+{"language_name":"Oz"}
+{"language_name":"Clean"}
+{"language_name":"IGOR Pro"}
+{"language_name":"Hy"}
+{"language_name":"HiveQL"}
+{"language_name":"LookML"}
+{"language_name":"Bluespec"}
+{"language_name":"Logtalk"}
+{"language_name":"Propeller Spin"}
+{"language_name":"Xojo"}
+{"language_name":"J"}
+{"language_name":"NCL"}
+{"language_name":"DCPU-16 ASM"}
+{"language_name":"Charity"}
+{"language_name":"Golo"}
+{"language_name":"Inform 7"}
+{"language_name":"MQL4"}
+{"language_name":"REALbasic"}
+{"language_name":"CWeb"}
+{"language_name":"Fantom"}
+{"language_name":"Harbour"}
+{"language_name":"WebAssembly"}
+{"language_name":"Oxygene"}
+{"language_name":"Brightscript"}
+{"language_name":"Zimpl"}
+{"language_name":"Factor"}
+{"language_name":"Ioke"}
+{"language_name":"Nextflow"}
+{"language_name":"KRL"}
+{"language_name":"Dogescript"}
+{"language_name":"ATS"}
+{"language_name":"Shen"}
+{"language_name":"Myghty"}
+{"language_name":"Moocode"}
+{"language_name":"Nit"}
+{"language_name":"ShellSession"}
+{"language_name":"MTML"}
+{"language_name":"Ballerina"}
+{"language_name":"TI Program"}
+{"language_name":"RUNOFF"}
+{"language_name":"UrWeb"}
+{"language_name":"Ox"}
+{"language_name":"TXL"}
+{"language_name":"ECL"}
+{"language_name":"XPages"}
+{"language_name":"PogoScript"}
+{"language_name":"NetLinx"}
+{"language_name":"wisp"}
+{"language_name":"KiCad Layout"}
+{"language_name":"Jolie"}
+{"language_name":"DataWeave"}
+{"language_name":"GAMS"}
+{"language_name":"Nearley"}
+{"language_name":"Genie"}
+{"language_name":"Opal"}
+{"language_name":"Markdown"}
+{"language_name":"PowerBuilder"}
+{"language_name":"Tea"}
+{"language_name":"LoomScript"}
+{"language_name":"Grace"}
+{"language_name":"NetLinx+ERB"}
+{"language_name":"Omgrofl"}
+{"language_name":"X10"}
+{"language_name":"Glyph"}
+{"language_name":"Rouge"}
+{"language_name":"LFE"}
+{"language_name":"Ring"}
+{"language_name":"KiCad Schematic"}
+{"language_name":null}

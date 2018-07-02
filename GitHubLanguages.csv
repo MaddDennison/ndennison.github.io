@@ -1,0 +1,357 @@
+language_name
+<option>C</option>
+<option>C++</option>
+<option>Python</option>
+<option>C#</option>
+<option>CSS</option>
+<option>HTML</option>
+<option>Java</option>
+<option>JavaScript</option>
+<option>Objective-C</option>
+<option>ApacheConf</option>
+<option>PHP</option>
+<option>Makefile</option>
+<option>Ruby</option>
+<option>Swift</option>
+<option>Clojure</option>
+<option>Shell</option>
+<option>CMake</option>
+<option>Elixir</option>
+<option>Elm</option>
+<option>Jupyter Notebook</option>
+<option>Erlang</option>
+<option>Perl</option>
+<option>D</option>
+<option>Lua</option>
+<option>Pascal</option>
+<option>Haskell</option>
+<option>Handlebars</option>
+<option>PLpgSQL</option>
+<option>SQLPL</option>
+<option>CoffeeScript</option>
+<option>Vue</option>
+<option>ASP</option>
+<option>Assembly</option>
+<option>Awk</option>
+<option>Objective-C++</option>
+<option>R</option>
+<option>Scala</option>
+<option>Scilab</option>
+<option>TeX</option>
+<option>UnrealScript</option>
+<option>VimL</option>
+<option>XSLT</option>
+<option>Go</option>
+<option>Batchfile</option>
+<option>Protocol Buffer</option>
+<option>AutoHotkey</option>
+<option>TypeScript</option>
+<option>Rust</option>
+<option>Vim script</option>
+<option>ActionScript</option>
+<option>Puppet</option>
+<option>Prolog</option>
+<option>Scheme</option>
+<option>Smalltalk</option>
+<option>GLSL</option>
+<option>Roff</option>
+<option>Visual Basic</option>
+<option>Inno Setup</option>
+<option>LiveScript</option>
+<option>Racket</option>
+<option>HLSL</option>
+<option>ShaderLab</option>
+<option>Arduino</option>
+<option>Matlab</option>
+<option>BitBake</option>
+<option>Limbo</option>
+<option>M</option>
+<option>DIGITAL Command Language</option>
+<option>Groff</option>
+<option>Emacs Lisp</option>
+<option>Groovy</option>
+<option>Web Ontology Language</option>
+<option>Cuda</option>
+<option>Smarty</option>
+<option>Max</option>
+<option>Processing</option>
+<option>Pure Data</option>
+<option>Rebol</option>
+<option>SuperCollider</option>
+<option>AMPL</option>
+<option>OCaml</option>
+<option>Standard ML</option>
+<option>Fortran</option>
+<option>PowerShell</option>
+<option>Lex</option>
+<option>SourcePawn</option>
+<option>Yacc</option>
+<option>Bison</option>
+<option>Forth</option>
+<option>Modelica</option>
+<option>Perl6</option>
+<option>Tcl</option>
+<option>AGS Script</option>
+<option>Gnuplot</option>
+<option>QML</option>
+<option>M4</option>
+<option>Kotlin</option>
+<option>Thrift</option>
+<option>ANTLR</option>
+<option>FreeMarker</option>
+<option>Brainfuck</option>
+<option>Common Lisp</option>
+<option>Coq</option>
+<option>E</option>
+<option>GAP</option>
+<option>Jasmin</option>
+<option>Logos</option>
+<option>OpenEdge ABL</option>
+<option>Red</option>
+<option>Verilog</option>
+<option>BlitzBasic</option>
+<option>MQL5</option>
+<option>NSIS</option>
+<option>Gherkin</option>
+<option>ColdFusion</option>
+<option>QMake</option>
+<option>Eagle</option>
+<option>LSL</option>
+<option>DOT</option>
+<option>Julia</option>
+<option>LLVM</option>
+<option>PostScript</option>
+<option>Nginx</option>
+<option>SMT</option>
+<option>Nix</option>
+<option>Apex</option>
+<option>FORTRAN</option>
+<option>IDL</option>
+<option>RenderScript</option>
+<option>KiCad</option>
+<option>XS</option>
+<option>Haxe</option>
+<option>PLSQL</option>
+<option>Cucumber</option>
+<option>DTrace</option>
+<option>Meson</option>
+<option>AppleScript</option>
+<option>Arc</option>
+<option>AspectJ</option>
+<option>HCL</option>
+<option>Pony</option>
+<option>PAWN</option>
+<option>Crystal</option>
+<option>Gettext Catalog</option>
+<option>F#</option>
+<option>Mako</option>
+<option>eC</option>
+<option>xBase</option>
+<option>Kit</option>
+<option>sed</option>
+<option>XML</option>
+<option>Dart</option>
+<option>Liquid</option>
+<option>FLUX</option>
+<option>SRecode Template</option>
+<option>AutoIt</option>
+<option>Mathematica</option>
+<option>Stan</option>
+<option>GDB</option>
+<option>Vala</option>
+<option>Nimrod</option>
+<option>SaltStack</option>
+<option>Ragel in Ruby Host</option>
+<option>VHDL</option>
+<option>WebIDL</option>
+<option>SQF</option>
+<option>nesC</option>
+<option>Component Pascal</option>
+<option>GCC Machine Description</option>
+<option>Hack</option>
+<option>PigLatin</option>
+<option>LabVIEW</option>
+<option>PureScript</option>
+<option>Mercury</option>
+<option>Objective-J</option>
+<option>LilyPond</option>
+<option>XQuery</option>
+<option>Isabelle</option>
+<option>NewLisp</option>
+<option>Game Maker Language</option>
+<option>OpenSCAD</option>
+<option>Squirrel</option>
+<option>Gosu</option>
+<option>Uno</option>
+<option>Stata</option>
+<option>Cap'n Proto</option>
+<option>Diff</option>
+<option>API Blueprint</option>
+<option>GDScript</option>
+<option>Redcode</option>
+<option>EmberScript</option>
+<option>PureBasic</option>
+<option>SystemVerilog</option>
+<option>Ragel</option>
+<option>Io</option>
+<option>ChucK</option>
+<option>Idris</option>
+<option>Cool</option>
+<option>Click</option>
+<option>Pike</option>
+<option>JSONiq</option>
+<option>POV-Ray SDL</option>
+<option>Xtend</option>
+<option>Ada</option>
+<option>Modula-2</option>
+<option>Slash</option>
+<option>q</option>
+<option>Solidity</option>
+<option>NetLogo</option>
+<option>ABAP</option>
+<option>COBOL</option>
+<option>Cirru</option>
+<option>Eiffel</option>
+<option>Lean</option>
+<option>Mask</option>
+<option>Perl 6</option>
+<option>P4</option>
+<option>Nu</option>
+<option>TLA</option>
+<option>Delphi</option>
+<option>APL</option>
+<option>Lasso</option>
+<option>XC</option>
+<option>CLIPS</option>
+<option>Clarion</option>
+<option>Module Management System</option>
+<option>SAS</option>
+<option>MAXScript</option>
+<option>VCL</option>
+<option>Graphviz (DOT)</option>
+<option>RAML</option>
+<option>Monkey</option>
+<option>RobotFramework</option>
+<option>AngelScript</option>
+<option>Bro</option>
+<option>Augeas</option>
+<option>Smali</option>
+<option>Ceylon</option>
+<option>MoonScript</option>
+<option>DM</option>
+<option>RPC</option>
+<option>Fancy</option>
+<option>Ecl</option>
+<option>Papyrus</option>
+<option>Csound Score</option>
+<option>mupad</option>
+<option>Agda</option>
+<option>Turing</option>
+<option>Parrot</option>
+<option>Volt</option>
+<option>SQL</option>
+<option>Dylan</option>
+<option>Nim</option>
+<option>HyPhy</option>
+<option>CartoCSS</option>
+<option>Ren'Py</option>
+<option>Self</option>
+<option>JFlex</option>
+<option>BlitzMax</option>
+<option>Befunge</option>
+<option>XProc</option>
+<option>Nemerle</option>
+<option>Metal</option>
+<option>ooc</option>
+<option>Zephir</option>
+<option>Frege</option>
+<option>Opa</option>
+<option>Terra</option>
+<option>EQ</option>
+<option>1C Enterprise</option>
+<option>Boo</option>
+<option>Alloy</option>
+<option>Cycript</option>
+<option>LOLCODE</option>
+<option>Genshi</option>
+<option>Pan</option>
+<option>Csound</option>
+<option>Pep8</option>
+<option>REXX</option>
+<option>Grammatical Framework</option>
+<option>Mirah</option>
+<option>Common Workflow Language</option>
+<option>wdl</option>
+<option>Filebench WML</option>
+<option>PicoLisp</option>
+<option>Chapel</option>
+<option>Rascal</option>
+<option>Csound Document</option>
+<option>Oz</option>
+<option>Clean</option>
+<option>IGOR Pro</option>
+<option>Hy</option>
+<option>HiveQL</option>
+<option>LookML</option>
+<option>Bluespec</option>
+<option>Logtalk</option>
+<option>Propeller Spin</option>
+<option>Xojo</option>
+<option>J</option>
+<option>NCL</option>
+<option>DCPU-16 ASM</option>
+<option>Charity</option>
+<option>Golo</option>
+<option>Inform 7</option>
+<option>MQL4</option>
+<option>REALbasic</option>
+<option>CWeb</option>
+<option>Fantom</option>
+<option>Harbour</option>
+<option>WebAssembly</option>
+<option>Oxygene</option>
+<option>Brightscript</option>
+<option>Zimpl</option>
+<option>Factor</option>
+<option>Ioke</option>
+<option>Nextflow</option>
+<option>KRL</option>
+<option>Dogescript</option>
+<option>ATS</option>
+<option>Shen</option>
+<option>Myghty</option>
+<option>Moocode</option>
+<option>Nit</option>
+<option>ShellSession</option>
+<option>MTML</option>
+<option>Ballerina</option>
+<option>TI Program</option>
+<option>RUNOFF</option>
+<option>UrWeb</option>
+<option>Ox</option>
+<option>TXL</option>
+<option>ECL</option>
+<option>XPages</option>
+<option>PogoScript</option>
+<option>NetLinx</option>
+<option>wisp</option>
+<option>KiCad Layout</option>
+<option>Jolie</option>
+<option>DataWeave</option>
+<option>GAMS</option>
+<option>Nearley</option>
+<option>Genie</option>
+<option>Opal</option>
+<option>Markdown</option>
+<option>PowerBuilder</option>
+<option>Tea</option>
+<option>LoomScript</option>
+<option>Grace</option>
+<option>NetLinx+ERB</option>
+<option>Omgrofl</option>
+<option>X10</option>
+<option>Glyph</option>
+<option>Rouge</option>
+<option>LFE</option>
+<option>Ring</option>
+<option>KiCad Schematic</option>
