@@ -4,8 +4,11 @@ app.controller("MainCtrl", function($http){
 
   var vm = this;
   vm.fetchData = function(user){
+    var keys = [];
     var dvGitHubData = document.getElementById("dvGitHubData");
     dvGitHubData.style.display = "block";
+    var dvTopicsAccordion = document.getElementById("dvTopicsAccordion");
+    dvTopicsAccordion.style.display = "none";
     vm.loading = true;
     $http.get('https://api.github.com/users/' + user.name).then(function(res){
       vm.name = res.data.name;
@@ -26,7 +29,7 @@ app.controller("MainCtrl", function($http){
       vm.repo_names = res.data.full_name;
       vm.repo_lang = res.data.language;
       vm.repo_data = res.data;
-      var keys = [];
+
       var i;
       var text = "";
       for (i=0; i<res.data.length; i++){
@@ -35,7 +38,6 @@ app.controller("MainCtrl", function($http){
 
 
 
-    //var LangStr = document.getElementById("LangList").innerHTML
     var arrayOfLang = text.split(/\s+/);
 
     var langCount = {};
@@ -68,6 +70,10 @@ app.controller("MainCtrl", function($http){
         columnValue: vm.langcount[keys[i]]
       }
     }
+
+document.getElementById("LangList").value = vm.langprime;
+
+
     //document.getElementById("testdiv").innerHTML = JSON.stringify(objTemp);
 
     <!-- amCharts javascript code -->

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <!--Bootstrap CSS-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="js/bootstrap.min.js"></script>
+  <!--<script src="js/bootstrap.min.js"></script>-->
   <!--Angular CDN-->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
   <!-- amCharts javascript sources -->
@@ -22,6 +22,8 @@
   <script type="text/javascript" src="amcharts/light.js"></script>
   <script type="text/javascript" src="amcharts/radar.js"></script>
   <script src="amcharts/dataloader.min.js"></script>
+  <!--jquery -->
+  <script src="js/jquery-3.3.1.js"></script>
   <!--Magnet Scripts -->
   <script src="script.js"></script>
   <!--This little script changes the display settings of the GitHub username input box -->
@@ -32,6 +34,7 @@
       var dvGitHubData = document.getElementById("dvGitHubData");
       var dvGitHubUserInput = document.getElementById("dvGitHubUserInput");
       var dvNoGitHubData = document.getElementById("dvNoGitHubData");
+
       dvGitHubUserInput.style.display = chkYes.checked ? "block": "none";
       if (chkYes.checked == true){
         dvGitHubUserInput.style.display = "block";
@@ -42,9 +45,32 @@
         dvNoGitHubData.style.display = "block";
       };
 
-
   }
+
+
+
+  function continueSurvey(){
+
+      var LangList = document.getElementById("LangList").value;
+      var dvTopicsAccordion = document.getElementById("dvTopicsAccordion");
+      dvTopicsAccordion.style.display = "block";
+      var dvJavaScriptLibraryCardFull = document.getElementById("dvJavaScriptLibraryCardFull");
+      var LangListArray = [];
+      LangListArray = LangList.split(",");
+
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]=="JavaScript"){
+          dvJavaScriptLibraryCardFull.style.visibility = "visible";
+
+          break;
+        } else{dvJavaScriptLibraryCardFull.style.visibility = "hidden";};
+      };
+  }
+
   </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 
@@ -91,29 +117,57 @@
   </div>
 
   <div class="card" id="dvGitHubData" style="display: none">
+    <div class="card-header" id="dvJavaScriptLibraryQuestions">
+      <h3 class="mb-0">
+          Some of your public GitHub data:
+      </h3>
+    </div>
+
     <div class="card-body">
       <h4 ng-if="vm.loading === true">Loading...</h4>
-      <h3 class="card-title">Some of your public GitHub data:</h3>
-      <br>
-      <p>
-      <img src={{vm.avatar}} alt="GitHub Avatar" style="border-radius:25%;float:left;width:200px;height:200px;">
-      <div id="chartdivSocial" style="float:left;width: 20%; height: 200px; background-color: #FFFFFF;" ></div>
-      <br><br>{{vm.name}}<br>
-      {{vm.location}}<br>
-      {{vm.bio}}<br>
-      </p>
-    <div id="chartdivLang" style="width: 100%; height: 800px; background-color: #FFFFFF;" ></div>
+
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Basic Info</h5>
+              <img src={{vm.avatar}} alt="GitHub Avatar" style="border-radius:25%;padding-right:15px;float:left;width:200px;height:200px;">
+                    <p>
+                      {{vm.name}}<br>
+                      {{vm.location}}<br>
+                      {{vm.bio}}<br>
+                    </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">GitHub Social</h5>
+              <div id="chartdivSocial" style="width: 100%; height: 200px; background-color: #FFFFFF;" ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div id="chartdivLang" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+
+      <input id="LangList"style="visibility: hidden"/>
+      <div style="text-align:right;">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="continueSurvey()">Continue Survey</button>
+      </div>
     </div>
   </div>
 
   <div id="dvNoGitHubData"style="display: none">
-    <p>No worries. We will start with a couple basic questions then.</p>
+    <p>No worries. We will just start with a basic question then.</p>
     <div class="card" id="dvBasicQuestionsCard" >
       <div class="card-body">
         <form>
           <div class="form-group">
             <label for="exampleFormControlSelect2">What languages do you usually use?</label>
-            <select multiple class="form-control" id="exampleFormControlSelect2">
+            <select multiple class="form-control" id="langMultiSelect">
               <option>C</option>
               <option>C++</option>
               <option>Python</option>
@@ -473,8 +527,758 @@
             </select>
           </div>
         </form>
+        <div style="text-align:right;">
+          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="continueSurvey()">Continue Survey</button>
+        </div>
+    <!--  <div id="chartdivLang" style="width: 100%; height: 175px; background-color: #FFFFFF;" ></div> -->
+      </div>
+    </div>
+  </div>
 
-      <div id="chartdivLang" style="width: 100%; height: 800px; background-color: #FFFFFF;" ></div>
+
+
+
+<!--  This Accordion will hold all the additional questions -->
+  <div id="dvTopicsAccordion" style="display: none">
+    <div id="dvJavaScriptLibraryCardFull" style="visibility:visible"class="card">
+      <div class="card-header" id="dvJavaScriptLibraryQuestions">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#dvJavaScriptLibraryCard" aria-expanded="false" aria-controls="dvJavaScriptLibraryCard">
+            JavaScript Libraries
+          </button>
+        </h5>
+      </div>
+
+      <div id="dvJavaScriptLibraryCard" class="collapse" aria-labelledby="dvJavaScriptLibraryQuestions" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          You have identified that you are a JavaScript dev. Would you please select libraries you often use:
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptjQuery">
+            <label class="form-check-label" for="chkJavaScriptjQuery">
+              jQuery
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptBackBoneJS">
+            <label class="form-check-label" for="chkJavaScriptBackBoneJS">
+              BackBoneJS
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptD3">
+            <label class="form-check-label" for="chkJavaScriptD3">
+              D3.js
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptReact">
+            <label class="form-check-label" for="chkJavaScriptReact">
+              React
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptJQueryUI">
+            <label class="form-check-label" for="chkJavaScriptJQueryUI">
+              jQuery UI
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptJQueryMobile">
+            <label class="form-check-label" for="chkJavaScriptJQueryMobile">
+              jQuery Mobile
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptUnderscore">
+            <label class="form-check-label" for="chkJavaScriptUnderscore">
+              Underscore.js
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptMoment">
+            <label class="form-check-label" for="chkJavaScriptMoment">
+              Moment.js
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkJavaScriptLodash">
+            <label class="form-check-label" for="chkJavaScriptLodash">
+              Lodash
+            </label>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvFrontEndFrameworks">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Front End Frameworks
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="dvFrontEndFrameworks" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          As a front end developer, what are your go to frameworks?
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkFrontEndBootstrap">
+            <label class="form-check-label" for="chkFrontEndBootstrap">
+              Bootstrap
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkFrontEndFoundation">
+            <label class="form-check-label" for="chkFrontEndFoundation">
+              Foundation
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkFrontEndSemantic">
+            <label class="form-check-label" for="chkFrontEndSemantic">
+              Semantic UI
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkFrontEndUikit">
+            <label class="form-check-label" for="chkFrontEndUikit">
+              uikit
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvDatabases">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Databases
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="dvDatabases" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+        Out of the following options, which databeses have you used in the back end of your apps?
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkDatabaseMySQL">
+              <label class="form-check-label" for="chkDatabaseMySQL">
+                MySQL
+              </label>
+            </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="chkDatabaseMariaDB">
+                <label class="form-check-label" for="chkDatabaseMariaDB">
+                  MariaDB
+                </label>
+              </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkDatabaseMongoDB">
+                  <label class="form-check-label" for="chkDatabaseMongoDB">
+                    MongoDB
+                  </label>
+                </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkDatabaseRedis">
+                    <label class="form-check-label" for="chkDatabaseRedis">
+                      Redis
+                    </label>
+                  </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="chkDatabasePostgreSQL">
+                      <label class="form-check-label" for="chkDatabasePostgreSQL">
+                        PostgreSQL
+                      </label>
+                    </div>
+        </div>
+      </div>
+
+
+
+    <div class="card">
+      <div class="card-header" id="dvCSSPreprocessors">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            CSS Preprocessors
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="dvCSSPreprocessors" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          Do you use any of the following CSS preprocessors? If so select any that you use:
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkCSSPreprocessorsSass">
+            <label class="form-check-label" for="chkCSSPreprocessorsSass">
+              Sass
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkCSSPreprocessorsLess">
+            <label class="form-check-label" for="chkCSSPreprocessorsLess">
+              Less
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkCSSPreprocessorsStylus">
+            <label class="form-check-label" for="chkCSSPreprocessorsStylus">
+              Stylus
+            </label>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvTextEditors">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            Text Editors
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFive" class="collapse" aria-labelledby="dvTextEditors" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          Text editors are obviously a core tool for developers; of the following list which ones are you familiar with?
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditors">
+            <label class="form-check-label" for="chkTextEditors">
+              Atom
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsSublime">
+            <label class="form-check-label" for="chkTextEditorsSublime">
+              Sublime
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsNotepad++">
+            <label class="form-check-label" for="chkTextEditorsNotepad++">
+              Notepad++
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsVisualStudioCode">
+            <label class="form-check-label" for="chkTextEditorsVisualStudioCode">
+              Visual Studio Code
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsTextMate">
+            <label class="form-check-label" for="chkTextEditorsTextMate">
+              TextMate
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsCoda">
+            <label class="form-check-label" for="chkTextEditorsCoda">
+              Coda 2
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsWebStorm">
+            <label class="form-check-label" for="chkTextEditorsWebStorm">
+              WebStorm
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsVim">
+            <label class="form-check-label" for="chkTextEditorsVim">
+              Vim
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsBrackets">
+            <label class="form-check-label" for="chkTextEditorsBrackets">
+              Brackets
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTextEditorsEmacs">
+            <label class="form-check-label" for="chkTextEditorsEmacs">
+              Emacs
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkTechkTextEditorsDreamweaverxtEditors">
+            <label class="form-check-label" for="chkTextEditorsDreamweaver">
+              Dreamweaver
+            </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvMarkdownEditors">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            Markdown Editors
+          </button>
+        </h5>
+      </div>
+      <div id="collapseSix" class="collapse" aria-labelledby="dvMarkdownEditors" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          Markdown editors can be similarly important. From the following list select any that you have used regularly:
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkMarkdownEditorsStackEdit">
+            <label class="form-check-label" for="chkMarkdownEditorsStackEdit">
+              StackEdit
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkMarkdownEditorsDillinger">
+            <label class="form-check-label" for="chkMarkdownEditorsDillinger">
+              Dillinger
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkMarkdownEditorsMou">
+            <label class="form-check-label" for="chkMarkdownEditorsMou">
+              Mou
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkMarkdownEditorsTexts">
+            <label class="form-check-label" for="chkMarkdownEditorsTexts">
+              Texts
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvIcons">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            Icons
+          </button>
+        </h5>
+      </div>
+      <div id="collapseSeven" class="collapse" aria-labelledby="dvIcons" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+
+          It is always nice to have great icons in your apps. Have you used any of these icon libraries? Select all that you are familiar with:
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkIconsFontAwesome">
+            <label class="form-check-label" for="chkIconsFontAwesome">
+              Font Awesome
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkIconsIconMonster">
+            <label class="form-check-label" for="chkIconsIconMonster">
+              IconMonster
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkIconsIcons8">
+            <label class="form-check-label" for="chkIconsIcons8">
+              Icons8
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkIconsIconFinder">
+            <label class="form-check-label" for="chkIconsIconFinder">
+              IconFinder
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkIconsFontello">
+            <label class="form-check-label" for="chkIconsFontello">
+              Fontello
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvGitClients">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+            Git Clients
+          </button>
+        </h5>
+      </div>
+      <div id="collapseEight" class="collapse" aria-labelledby="dvGitClients" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          Using Git to manage code development is becoming an important piece of web dev. Which of the following services are you familiar with?
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkGitClientsSourceTree">
+            <label class="form-check-label" for="chkGitClientsSourceTree">
+              SourceTree
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkGitClientsGitKracken">
+            <label class="form-check-label" for="chkGitClientsGitKracken">
+              GitKracken
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkGitClientsTowerTwo">
+            <label class="form-check-label" for="chkGitClientsTowerTwo">
+              Tower 2
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkGitClientsGitHubClient">
+            <label class="form-check-label" for="chkGitClientsGitHubClient">
+              GitHub Client
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkGitClientsGogs">
+            <label class="form-check-label" for="chkGitClientsGogs">
+              Gogs
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkGitClientsGitLab">
+            <label class="form-check-label" for="chkGitClientsGitLab">
+              GitLab
+            </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="dvExperimenting">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+            Experimenting
+          </button>
+        </h5>
+      </div>
+      <div id="collapseEleven" class="collapse" aria-labelledby="dvExperimenting" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          There are some great alternatives to full blown collaboration software sharing code with other developers. Out of these four options which ones are you familiar with?
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkExperimentingJSBin">
+            <label class="form-check-label" for="chkExperimentingJSBin">
+              JS Bin
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkExperimentingJSfiddle">
+            <label class="form-check-label" for="chkExperimentingJSfiddle">
+              JSfiddle
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkExperimentingCodeshare">
+            <label class="form-check-label" for="chkExperimentingCodeshare">
+              Codeshare
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkExperimentingDabblet">
+            <label class="form-check-label" for="chkExperimentingDabblet">
+              Dabblet
+            </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvCollaboration Tools">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTweleve" aria-expanded="false" aria-controls="collapseTweleve">
+            Collaboration Tools
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTweleve" class="collapse" aria-labelledby="dvCollaborationTools" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          Working remotely is an important part of many dev teams, as such so are collaboration tools. Out of the list below which tools are you familiar with?
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkCollaborationToolsSlack">
+            <label class="form-check-label" for="chkCollaborationToolsSlack">
+              Slack
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkCollaborationToolsTrello">
+            <label class="form-check-label" for="chkCollaborationToolsTrello">
+              Trello
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkCollaborationToolsGlip">
+            <label class="form-check-label" for="chkCollaborationToolsGlip">
+              Glip
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkCollaborationToolsAsana">
+            <label class="form-check-label" for="chkCollaborationToolsAsana">
+              Asana
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkCollaborationToolsJira">
+            <label class="form-check-label" for="chkCollaborationToolsJira">
+              Jira
+            </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvWebsiteSpeedTestTools">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+            Website Speed Test Tools
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFourteen" class="collapse" aria-labelledby="dvWebsiteSpeedTestTools" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+        Ensuring the speed of your site/app is often essential. Out of these tools, which are you familiar with?
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsWST">
+            <label class="form-check-label" for="chkWebsiteSpeedTestToolsWST">
+              Website Speed Test
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsGooglePageSpeedInsights">
+            <label class="form-check-label" for="chkWebsiteSpeedTestToolsGooglePageSpeedInsights">
+              Google PageSpeed Insights
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsGoogleChromeDevTools">
+            <label class="form-check-label" for="chkWebsiteSpeedTestToolsGoogleChromeDevTools">
+              Google Chrome DevTools
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsDotcomToolsSpeedTest">
+            <label class="form-check-label" for="chkWebsiteSpeedTestToolsDotcomToolsSpeedTest">
+              Dotcom-Tools Speed Test
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsWebPageTest">
+            <label class="form-check-label" for="chkWebsiteSpeedTestToolsWebPageTest">
+              WebPageTest
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsPingdom">
+            <label class="form-check-label" for="chkWebsiteSpeedTestToolsPingdom">
+              Pingdom
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsGTmetrix">
+            <label class="form-check-label" for="chkWebsiteSpeedTestToolsGTmetrix">
+              GTmetrix
+            </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvWebDevCommunities">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+            Web Dev Communities
+          </button>
+        </h5>
+      </div>
+      <div id="collapseFifteen" class="collapse" aria-labelledby="dvWebDevCommunities" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          The internet is full of countless comunities, and some of them even provide constructive influences! Out of the commnities listed below, which ones have you participated in?
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesStackOverflow">
+            <label class="form-check-label" for="chkWebDevCommunitiesStackOverflow">
+              Stack Overflow
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesFrontendFront">
+            <label class="form-check-label" for="chkWebDevCommunitiesFrontendFront">
+              Front-end Front
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesHasnode">
+            <label class="form-check-label" for="chkWebDevCommunitiesHasnode">
+              Hasnode
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesRefind">
+            <label class="form-check-label" for="chkWebDevCommunitiesRefind">
+              Refind
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesGoogleWebDevelopersGroup">
+            <label class="form-check-label" for="chkWebDevCommunitiesGoogleWebDevelopersGroup">
+              Google+ Web Developers Group
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesFacebookWordPressFrontendDevelopersGroup">
+            <label class="form-check-label" for="chkWebDevCommunitiesFacebookWordPressFrontendDevelopersGroup">
+              Facebook WordPress Front-end Developers Group
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesLinkedInWebDesignDevelopmentProfessionalsGroup">
+            <label class="form-check-label" for="chkWebDevCommunitiesLinkedInWebDesignDevelopmentProfessionalsGroup">
+              LinkedIn Web Design and Development Professionals Group
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitieLinkedInWebSiteDevelopmentGroups">
+            <label class="form-check-label" for="chkWebDevCommunitieLinkedInWebSiteDevelopmentGroups">
+              LinkedIn Web Site Development Group
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesLinkedInPHPDeveloperGroup">
+            <label class="form-check-label" for="chkWebDevCommunitiesLinkedInPHPDeveloperGroup">
+              LinkedIn PHP Developer Group
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesLinkedInWordPressDevelopersGroup">
+            <label class="form-check-label" for="chkWebDevCommunitiesLinkedInWordPressDevelopersGroup">
+              LinkedIn WordPress Developers Group
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesWebdeveloperCom">
+            <label class="form-check-label" for="chkWebDevCommunitiesWebdeveloperCom">
+              Webdeveloper.com
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesSitepointForums">
+            <label class="form-check-label" for="chkWebDevCommunitiesSitepointForums">
+              Sitepoint Forums
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesRperfmatters">
+            <label class="form-check-label" for="chkWebDevCommunitiesRperfmatters">
+              /r/perfmatters
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevCommunitiesRwebdev">
+            <label class="form-check-label" for="chkWebDevCommunitiesRwebdev">
+              /r/webdev
+            </label>
+          </div>
+
+      </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header" id="dvWebDevelopmentNewsletters">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+            Web Development Newsletters
+          </button>
+        </h5>
+      </div>
+      <div id="collapseSixteen" class="collapse" aria-labelledby="dvWebDevelopmentNewsletters" data-parent="#dvTopicsAccordion">
+        <div class="card-body">
+          Similarly to communities, the interet has no shortage of newsletters. Out of the dev newsletters listed below which ones are you familiar with?
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevelopmentNewsletterSwdrlinfo">
+            <label class="form-check-label" for="chkWebDevelopmentNewsletterSwdrlinfo">
+              wdrl.info
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevelopmentNewslettersWebopsweekly">
+            <label class="form-check-label" for="chkWebDevelopmentNewslettersWebopsweekly">
+              webopsweekly.com
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevelopmentNewslettersWebToolsWeekly">
+            <label class="form-check-label" for="chkWebDevelopmentNewslettersWebToolsWeekly">
+              web tools weekly
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevelopmentNewslettersFreshbrewedCo">
+            <label class="form-check-label" for="chkWebDevelopmentNewslettersFreshbrewedCo">
+              freshbrewed.co
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevelopmentNewslettersSmashingMagazine">
+            <label class="form-check-label" for="chkWebDevelopmentNewslettersSmashingMagazine">
+              smashingmagazine.com
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevelopmentNewslettersFrontendDevWeekly">
+            <label class="form-check-label" for="chkWebDevelopmentNewslettersFrontendDevWeekly">
+              front-end dev weekly
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevelopmentNewslettersFridayFrontend">
+            <label class="form-check-label" for="chkWebDevelopmentNewslettersFridayFrontend">
+              friday front-end
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="chkWebDevelopmentNewslettersDevTips">
+            <label class="form-check-label" for="chkWebDevelopmentNewslettersDevTips">
+              /dev tips
+            </label>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
