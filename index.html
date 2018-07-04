@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="This short survey collects some developer focused data">
   <meta name="author" content="Nathan Dennison">
-  <link rel="icon" href="../../../../favicon.ico">
+  <link rel="icon" href="./magnet.ico.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Magnet Survey</title>
   <!-- amCharts fontawesome CDN-->
@@ -16,16 +16,16 @@
   <!--Angular CDN-->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
   <!-- amCharts javascript sources -->
-  <script type="text/javascript" src="amcharts/amcharts.js"></script>
-  <script type="text/javascript" src="amcharts/serial.js"></script>
-  <script type="text/javascript" src="amcharts/dark.js"></script>
-  <script type="text/javascript" src="amcharts/light.js"></script>
-  <script type="text/javascript" src="amcharts/radar.js"></script>
-  <script src="amcharts/dataloader.min.js"></script>
+  <script type="text/javascript" src="./amcharts/amcharts.js"></script>
+  <script type="text/javascript" src="./amcharts/serial.js"></script>
+  <script type="text/javascript" src="./amcharts/dark.js"></script>
+  <script type="text/javascript" src="./amcharts/light.js"></script>
+  <script type="text/javascript" src="./amcharts/radar.js"></script>
+  <script src="./amcharts/dataloader.min.js"></script>
   <!--jquery -->
-  <script src="js/jquery-3.3.1.js"></script>
+  <script src="./js/jquery-3.3.1.js"></script>
   <!--Magnet Scripts -->
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
   <!--This little script changes the display settings of the GitHub username input box -->
   <script type = "text/javascript">
     function showGitHubUserInput(){
@@ -46,12 +46,12 @@
       };
 
   }
-
-
-
-  function continueSurvey(){
-
-      var LangList = document.getElementById("LangList").value;
+  function submitSurvey(){
+    alert("Thanks for taking the time to fill that out! It helps us make better solutions for everyone.");
+    location.reload();
+  }
+  function continueSurveyGitHubUser(){
+    var LangList = document.getElementById("LangList").value;
       var dvTopicsAccordion = document.getElementById("dvTopicsAccordion");
       dvTopicsAccordion.style.display = "block";
       var dvJavaScriptLibraryCardFull = document.getElementById("dvJavaScriptLibraryCardFull");
@@ -59,14 +59,115 @@
       LangListArray = LangList.split(",");
 
       for (var i = 0; i < LangListArray.length; i++){
-        if (LangListArray[i]=="JavaScript"){
-          dvJavaScriptLibraryCardFull.style.visibility = "visible";
-
-          break;
-        } else{dvJavaScriptLibraryCardFull.style.visibility = "hidden";};
+        if (LangListArray[i]!=="JavaScript"){
+          dvJavaScriptLibraryCardFull.style.display = "none";
+        } else{dvJavaScriptLibraryCardFull.style.display = "flex";
+            break;};
       };
+      var dvFrontEndFrameworksFull = document.getElementById("dvFrontEndFrameworksFull");
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="HTML"){
+          dvFrontEndFrameworksFull.style.display = "none";
+        } else {
+          dvFrontEndFrameworksFull.style.display = "flex";
+        break;};
+      };
+      var dvDatabasesFull = document.getElementById("dvDatabasesFull");
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="SQL"){
+          dvDatabasesFull.style.display = "none";
+        } else {
+          dvDatabasesFull.style.display = "flex";
+        break;};
+      };
+      var dvCSSPreprocessorsFull = document.getElementById("dvCSSPreprocessorsFull");
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="SQL"){
+          dvCSSPreprocessorsFull.style.display = "none";
+        } else {
+          dvCSSPreprocessorsFull.style.display = "flex";
+        break;};
+      };
+      var dvIconsFull = document.getElementById("dvIconsFull");
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="SQL"){
+          dvIconsFull.style.display = "none";
+        } else {
+          dvIconsFull.style.display = "flex";
+        break;};
+      };
+      var dvSubmitSurvey = document.getElementById("dvSubmitSurvey");
+      dvSubmitSurvey.style.display = "block";
   }
+  function getSelectValues(select) {
+      var result = [];
+      var options = select && select.options;
+      var opt;
 
+      for (var i=0, iLen=options.length; i<iLen; i++) {
+        opt = options[i];
+
+        if (opt.selected) {
+          result.push(opt.value || opt.text);
+        }
+      }
+      return result;
+    }
+  function continueSurvey(){
+
+
+    var LangMultiSelect = document.getElementById("langMultiSelect");
+    var LangListArray = getSelectValues(LangMultiSelect);
+
+      var dvTopicsAccordion = document.getElementById("dvTopicsAccordion");
+      dvTopicsAccordion.style.display = "block";
+      var dvJavaScriptLibraryCardFull = document.getElementById("dvJavaScriptLibraryCardFull");
+
+
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="JavaScript"){
+          dvJavaScriptLibraryCardFull.style.display = "none";
+        } else{dvJavaScriptLibraryCardFull.style.display = "flex";
+            break;};
+      };
+      var dvFrontEndFrameworksFull = document.getElementById("dvFrontEndFrameworksFull");
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="HTML"){
+          dvFrontEndFrameworksFull.style.display = "none";
+        } else {
+          dvFrontEndFrameworksFull.style.display = "flex";
+        break;};
+      };
+      var dvDatabasesFull = document.getElementById("dvDatabasesFull");
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="SQL"){
+          dvDatabasesFull.style.display = "none";
+        } else {
+          dvDatabasesFull.style.display = "flex";
+        break;};
+      };
+      var dvCSSPreprocessorsFull = document.getElementById("dvCSSPreprocessorsFull");
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="CSS"){
+          dvCSSPreprocessorsFull.style.display = "none";
+        } else {
+          dvCSSPreprocessorsFull.style.display = "flex";
+        break;};
+      };
+      var dvIconsFull = document.getElementById("dvIconsFull");
+      for (var i = 0; i < LangListArray.length; i++){
+        if (LangListArray[i]!=="HTML"){
+          dvIconsFull.style.display = "none";
+        } else {
+          dvIconsFull.style.display = "flex";
+        break;};
+      };
+      var dvSubmitSurvey = document.getElementById("dvSubmitSurvey");
+      dvSubmitSurvey.style.display = "block";
+
+
+
+  }
   </script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -153,9 +254,9 @@
 
     <div id="chartdivLang" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
 
-      <input id="LangList"style="visibility: hidden"/>
-      <div style="text-align:right;">
-        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="continueSurvey()">Continue Survey</button>
+      <input id="LangList" style="visibility:hidden"/>
+      <div style="text-align:middle;">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="continueSurveyGitHubUser()">Continue Survey</button>
       </div>
     </div>
   </div>
@@ -527,8 +628,8 @@
             </select>
           </div>
         </form>
-        <div style="text-align:right;">
-          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="continueSurvey()">Continue Survey</button>
+        <div style="text-align:middle;">
+          <button class="btn btn-outline-dark my-2 my-sm-0" style="text-align:middle;" type="submit" onclick="continueSurvey()">Continue Survey</button>
         </div>
     <!--  <div id="chartdivLang" style="width: 100%; height: 175px; background-color: #FFFFFF;" ></div> -->
       </div>
@@ -540,7 +641,7 @@
 
 <!--  This Accordion will hold all the additional questions -->
   <div id="dvTopicsAccordion" style="display: none">
-    <div id="dvJavaScriptLibraryCardFull" style="visibility:visible"class="card">
+    <div id="dvJavaScriptLibraryCardFull" class="card">
       <div class="card-header" id="dvJavaScriptLibraryQuestions">
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#dvJavaScriptLibraryCard" aria-expanded="false" aria-controls="dvJavaScriptLibraryCard">
@@ -614,7 +715,7 @@
     </div>
 
 
-    <div class="card">
+    <div class="card" id="dvFrontEndFrameworksFull">
       <div class="card-header" id="dvFrontEndFrameworks">
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -654,7 +755,7 @@
     </div>
 
 
-    <div class="card">
+    <div class="card" id="dvDatabasesFull">
       <div class="card-header" id="dvDatabases">
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -702,10 +803,11 @@
                     </div>
         </div>
       </div>
+    </div>
 
 
 
-    <div class="card">
+    <div class="card" id="dvCSSPreprocessorsFull">
       <div class="card-header" id="dvCSSPreprocessors">
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -866,7 +968,7 @@
     </div>
 
 
-    <div class="card">
+    <div class="card" id="dvIconsFull">
       <div class="card-header" id="dvIcons">
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
@@ -1056,64 +1158,6 @@
     </div>
 
 
-    <div class="card">
-      <div class="card-header" id="dvWebsiteSpeedTestTools">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
-            Website Speed Test Tools
-          </button>
-        </h5>
-      </div>
-      <div id="collapseFourteen" class="collapse" aria-labelledby="dvWebsiteSpeedTestTools" data-parent="#dvTopicsAccordion">
-        <div class="card-body">
-        Ensuring the speed of your site/app is often essential. Out of these tools, which are you familiar with?
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsWST">
-            <label class="form-check-label" for="chkWebsiteSpeedTestToolsWST">
-              Website Speed Test
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsGooglePageSpeedInsights">
-            <label class="form-check-label" for="chkWebsiteSpeedTestToolsGooglePageSpeedInsights">
-              Google PageSpeed Insights
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsGoogleChromeDevTools">
-            <label class="form-check-label" for="chkWebsiteSpeedTestToolsGoogleChromeDevTools">
-              Google Chrome DevTools
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsDotcomToolsSpeedTest">
-            <label class="form-check-label" for="chkWebsiteSpeedTestToolsDotcomToolsSpeedTest">
-              Dotcom-Tools Speed Test
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsWebPageTest">
-            <label class="form-check-label" for="chkWebsiteSpeedTestToolsWebPageTest">
-              WebPageTest
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsPingdom">
-            <label class="form-check-label" for="chkWebsiteSpeedTestToolsPingdom">
-              Pingdom
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="chkWebsiteSpeedTestToolsGTmetrix">
-            <label class="form-check-label" for="chkWebsiteSpeedTestToolsGTmetrix">
-              GTmetrix
-            </label>
-          </div>
-
-        </div>
-      </div>
-    </div>
 
 
     <div class="card">
@@ -1281,4 +1325,8 @@
         </div>
       </div>
     </div>
+  </div>
+<br>
+  <div id="dvSubmitSurvey" style="text-align:middle; display: none;">
+    <button id="btnSubmitSurvey" class="btn btn-outline-dark my-2 my-sm-0 btn-lg" style="text-align:middle;" type="submit" onclick="submitSurvey()">Submit Survey</button>
   </div>
