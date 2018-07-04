@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <!--Bootstrap CSS-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="sticky-footer.css" rel="stylesheet">
   <!--<script src="js/bootstrap.min.js"></script>-->
   <!--Angular CDN-->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
@@ -255,7 +256,7 @@
     <div id="chartdivLang" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
 
       <input id="LangList" style="visibility:hidden"/>
-      <div style="text-align:middle;">
+      <div class="col=md-4 text-center" style="text-align:middle;">
         <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" onclick="continueSurveyGitHubUser()">Continue Survey</button>
       </div>
     </div>
@@ -628,7 +629,7 @@
             </select>
           </div>
         </form>
-        <div style="text-align:middle;">
+        <div class="col=md-4 text-center" style="text-align:middle;">
           <button class="btn btn-outline-dark my-2 my-sm-0" style="text-align:middle;" type="submit" onclick="continueSurvey()">Continue Survey</button>
         </div>
     <!--  <div id="chartdivLang" style="width: 100%; height: 175px; background-color: #FFFFFF;" ></div> -->
@@ -1327,6 +1328,8 @@
     </div>
   </div>
 <br>
-  <div id="dvSubmitSurvey" style="text-align:middle; display: none;">
+  <div class="col=md-4 text-center" id="dvSubmitSurvey" style="text-align:middle; display: none;">
     <button id="btnSubmitSurvey" class="btn btn-outline-dark my-2 my-sm-0 btn-lg" style="text-align:middle;" type="submit" onclick="submitSurvey()">Submit Survey</button>
   </div>
+<br>
+</main>
