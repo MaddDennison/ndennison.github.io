@@ -1,0 +1,26 @@
+{
+  "name": "ndennison.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "insert.js",
+  "scripts": {
+    "test": "TESTjson"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nDennison/MagnetTest.git"
+  },
+  "keywords": [
+    "Survey"
+  ],
+  "author": "Nathan Dennison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nDennison/MagnetTest/issues"
+  },
+  "homepage": "https://github.com/nDennison/MagnetTest#readme",
+  "dependencies": {
+    "mysql": "^2.15.0",
+    "uniq": "^1.0.1"
+  }
+}

@@ -12,11 +12,16 @@ app.controller("MainCtrl", function($http){
     vm.loading = true;
     $http.get('https://api.github.com/users/' + user.name).then(function(res){
       vm.name = res.data.name;
+      userName = vm.name;
       vm.location = res.data.location;
       vm.id = res.data.id;
+      userLocation = vm.location;
+
+      userGitHubID = vm.userName;
       vm.company = res.data.company;
       vm.email = res.data.email;
       vm.bio = res.data.bio;
+      userBio = vm.bio;
       vm.followers = res.data.followers;
       vm.following = res.data.following;
       vm.created_at = res.data.created_at;
@@ -24,6 +29,7 @@ app.controller("MainCtrl", function($http){
       vm.avatar = res.data.avatar_url;
       vm.data = res;
       vm.loading = false;
+      vm.userName = user.name;
     })
     $http.get('https://api.github.com/users/' + user.name +"/repos").then(function(res){
       vm.repo_names = res.data.full_name;
